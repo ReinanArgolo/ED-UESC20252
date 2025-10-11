@@ -9,15 +9,16 @@ typedef struct Pilha {
 
 Pilha* alocar_pilha(void) {
     Pilha* new_p = malloc(sizeof(Pilha));
+
     if(new_p == NULL) exit(-1);
-
     new_p->prox = NULL;
-
+    
     return new_p;
 }
 
 Pilha* push (Pilha* p, int nro) {
     Pilha* new_p = alocar_pilha();
+
     new_p->value = nro;
     new_p->prox = p;
 
@@ -43,8 +44,7 @@ void print_pilha(Pilha* p) {
     for (Pilha* aux = p; aux != NULL; aux = aux->prox) {
         printf("%d ", aux->value);
     }
-    printf("\n");
-        
+    printf("\n");     
 }
 
 
